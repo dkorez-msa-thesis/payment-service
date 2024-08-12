@@ -14,7 +14,7 @@ public class PaymentDao {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @Column(name = "user_id")
+    @Column(name = "order_id")
     Long orderId;
 
     @Column(name = "amount")

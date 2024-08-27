@@ -29,21 +29,25 @@ public class PaymentCoordinator {
         return paymentService.findPaymentsForOrder(orderId);
     }
 
-    public void create(CreatePaymentDto payment, boolean sendEvent) {
+    public PaymentDto create(CreatePaymentDto payment, boolean sendEvent) {
         PaymentDto response = paymentService.create(payment);
 
         if (sendEvent) {
             PaymentEvent event = new PaymentEvent(PaymentEventType.CREATED, response.getId(), response);
             eventProducer.sendEvent(event);
         }
+
+        return response;
     }
 
-    public void updateStatus(Long id, String status, boolean sendEvent) {
+    public PaymentDto updateStatus(Long id, String status, boolean sendEvent) {
         PaymentDto response = paymentService.updateStatus(id, status);
 
         if (sendEvent) {
             PaymentEvent event = new PaymentEvent(PaymentEventType.UPDATED, response.getId(), response);
             eventProducer.sendEvent(event);
         }
+
+        return response;
     }
 }

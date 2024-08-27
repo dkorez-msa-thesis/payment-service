@@ -11,7 +11,7 @@ public class PaymentMapper {
 
         PaymentDto dto = new PaymentDto();
         dto.setId(entity.getId());
-        dto.setOrderId(entity.getOrderId());
+        dto.setOrderId(entity.getCheckoutId());
         dto.setAmount(entity.getAmount());
         dto.setPaymentMethod(entity.getPaymentMethod());
         dto.setPaymentStatus(entity.getPaymentStatus());
@@ -24,7 +24,7 @@ public class PaymentMapper {
             return null;
 
         PaymentDao entity = new PaymentDao();
-        entity.setOrderId(dto.getOrderId());
+        entity.setCheckoutId(dto.getOrderId());
         entity.setAmount(dto.getAmount());
         entity.setPaymentMethod(dto.getPaymentMethod());
         entity.setPaymentStatus(dto.getPaymentStatus());
@@ -37,7 +37,7 @@ public class PaymentMapper {
             return null;
 
         PaymentDao entity = new PaymentDao();
-        entity.setOrderId(dto.getOrderId());
+        entity.setCheckoutId(dto.getCheckoutId());
         entity.setAmount(dto.getAmount());
         entity.setPaymentMethod(dto.getPaymentMethod());
         entity.setPaymentStatus(dto.getPaymentStatus());

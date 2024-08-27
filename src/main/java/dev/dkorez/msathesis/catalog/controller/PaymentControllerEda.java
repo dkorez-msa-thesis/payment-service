@@ -12,15 +12,15 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 @ApplicationScoped
-@Path("api/payments")
+@Path("eda/payments")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class PaymentControllerRest {
+public class PaymentControllerEda {
     private final PaymentCoordinator paymentCoordinator;
-    private static final boolean SENT_EVENT = false;
+    private static final boolean SENT_EVENT = true;
 
     @Inject
-    public PaymentControllerRest(PaymentCoordinator paymentCoordinator) {
+    public PaymentControllerEda(PaymentCoordinator paymentCoordinator) {
         this.paymentCoordinator = paymentCoordinator;
     }
 
@@ -41,7 +41,7 @@ public class PaymentControllerRest {
         PaymentDto response = paymentCoordinator.create(request, SENT_EVENT);
         return Response.status(Response.Status.CREATED).entity(response).build();
     }
-
+    
     @PATCH
     @Path("/{id}/status")
     public PaymentDto updateStatus(@PathParam("id") Long id, String status) {

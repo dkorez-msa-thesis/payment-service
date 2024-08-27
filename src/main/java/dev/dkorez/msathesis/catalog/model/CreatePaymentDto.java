@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 @Data
 public class CreatePaymentDto {
-    Long orderId;
+    Long checkoutId;
     BigDecimal amount;
     String paymentMethod;
     String paymentStatus;

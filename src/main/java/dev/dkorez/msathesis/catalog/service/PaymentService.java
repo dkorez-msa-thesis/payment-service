@@ -39,7 +39,7 @@ public class PaymentService {
     }
 
     public List<PaymentDto> findPaymentsForOrder(Long orderId) {
-        return paymentRepository.list(" orderId = ?1", orderId).stream()
+        return paymentRepository.list(" checkoutId = ?1", orderId).stream()
                 .map(PaymentMapper::toDto)
                 .toList();
     }

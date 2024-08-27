@@ -7,15 +7,15 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "ORDER")
+@Table(name = "PAYMENT")
 @Data
 public class PaymentDao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @Column(name = "order_id")
-    Long orderId;
+    @Column(name = "checkout_id")
+    Long checkoutId;
 
     @Column(name = "amount")
     BigDecimal amount;

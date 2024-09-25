@@ -15,6 +15,8 @@ public class PaymentMapper {
         dto.setAmount(entity.getAmount());
         dto.setPaymentMethod(entity.getPaymentMethod());
         dto.setPaymentStatus(entity.getPaymentStatus());
+        dto.setCreatedAt(entity.getCreatedAt());
+        dto.setUpdatedAt(entity.getUpdatedAt());
 
         return dto;
     }

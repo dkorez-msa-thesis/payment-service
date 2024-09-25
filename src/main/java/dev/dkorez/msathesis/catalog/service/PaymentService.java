@@ -25,7 +25,7 @@ public class PaymentService {
     @Transactional
     public PaymentDto create(CreatePaymentDto order) {
         PaymentDao entity = PaymentMapper.fromCreateDto(order);
-        entity.setUpdatedAt(LocalDateTime.now());
+        entity.setCreatedAt(LocalDateTime.now());
         entity.setUpdatedAt(LocalDateTime.now());
         paymentRepository.persist(entity);
 

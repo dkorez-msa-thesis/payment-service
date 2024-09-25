@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Data
 public class PaymentDao {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column(name = "checkout_id")
